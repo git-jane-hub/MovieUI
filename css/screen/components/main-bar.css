@@ -1,0 +1,12 @@
+.main-bar {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+/* main-bar에 배경색 바뀌면 아래 버튼 배경색도 바꿔줘야됨 */
+.main-bar__btn {
+  font-size: medium;
+  font-weight: 800;
+  border-style: none;
+  background-color: white;
+}

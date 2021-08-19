@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style></style>
+    <meta charset="UTF-8" />
+    <title>관리자페이지 - 회원 정보조회</title>
+  </head>
+  <body>
+    <h1>사용자 정보 조회</h1>
+    <form>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Password</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+          </tr>
+        </thead>
+        <tbody>
+          <c:forEach var="user" items="${userList }">
+            <tr>
+              <td>abcabc</td>
+              <td>abcabc</td>
+              <td>abcabc</td>
+              <td>abcabc</td>
+              <td>abcabc</td>
+            </tr>
+          </c:forEach>
+        </tbody>
+      </table>
+      <c:if test="${userDTO.hasUser() }">
+        <c:if test="${userDTO.startPage > 10 }">
+          <a href="/MovieProject/userselect.do?page=${userDTO.startPage - 10 }"
+            >[PREV]</a
+          >
+        </c:if>
+
+        <c:forEach
+          var="pageNum"
+          begin="${userDTO.startPage }"
+          end="${userDTO.endPage }"
+        >
+          <a href="/MovieProject/userselect.do?page=${pageNum }"
+            >[${pageNum }]</a
+          >
+        </c:forEach>
+
+        <c:if test="${userDTO.endPage < userDTO.totalPages }">
+          <a href="/MovieProject/userselect.do?page=${userDTO.startPage + 10 }"
+            >[NEXT]</a
+          >
+        </c:if>
+      </c:if>
+    </form>
+  </body>
+</html>
