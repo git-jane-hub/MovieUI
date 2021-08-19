@@ -3,56 +3,87 @@
   <head>
     <style></style>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/css/styles.css" />
     <title>관리자페이지 - 회원 정보조회</title>
   </head>
   <body>
-    <h1>사용자 정보 조회</h1>
-    <form>
-      <table border="1">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Password</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Age</th>
-          </tr>
-        </thead>
-        <tbody>
-          <c:forEach var="user" items="${userList }">
+    <!--main 화면 header start-->
+    <div class="main-bar">
+      <div class="main-bar__column">
+        <span
+          ><a href="#"><img src="/css/screen/images/logo.png" /></a
+        ></span>
+      </div>
+      <div class="main-bar__column">
+        <span>
+          <a class="main-bar__movie" href="#">영화정보</a>
+          <a class="main-bar__movie" href="#">영화예매</a>
+        </span>
+      </div>
+      <div class="main-bar__column">
+        <span><a class="main-bar__btn" href="#">로그인</a></span>
+        <span>|</span>
+        <span><a class="main-bar__btn" href="#">회원가입</a></span>
+      </div>
+    </div>
+    <!-- main 화면 header end-->
+    <div class="info-header">
+      <h1 class="info-header__title">사용자 정보 조회</h1>
+      <form class="info-form">
+        <table class="info-form__title" border="1">
+          <thead class="info-form__content">
             <tr>
-              <td>abcabc</td>
-              <td>abcabc</td>
-              <td>abcabc</td>
-              <td>abcabc</td>
-              <td>abcabc</td>
+              <th>ID</th>
+              <th>Password</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Age</th>
             </tr>
-          </c:forEach>
-        </tbody>
-      </table>
-      <c:if test="${userDTO.hasUser() }">
-        <c:if test="${userDTO.startPage > 10 }">
-          <a href="/MovieProject/userselect.do?page=${userDTO.startPage - 10 }"
-            >[PREV]</a
-          >
-        </c:if>
-
-        <c:forEach
-          var="pageNum"
-          begin="${userDTO.startPage }"
-          end="${userDTO.endPage }"
-        >
-          <a href="/MovieProject/userselect.do?page=${pageNum }"
-            >[${pageNum }]</a
-          >
-        </c:forEach>
-
-        <c:if test="${userDTO.endPage < userDTO.totalPages }">
-          <a href="/MovieProject/userselect.do?page=${userDTO.startPage + 10 }"
-            >[NEXT]</a
-          >
-        </c:if>
-      </c:if>
-    </form>
+          </thead>
+          <tbody class="info-form__content">
+            <c:forEach var="user" items="${userList }">
+              <tr>
+                <td>abcabc</td>
+                <td>abcabc</td>
+                <td>abcabc</td>
+                <td>abcabc</td>
+                <td>abcabc</td>
+              </tr>
+            </c:forEach>
+          </tbody>
+        </table>
+        <div class="info-page">
+          <c:if test="${userDTO.hasUser() }">
+            <div class="info-page__each">
+              <c:if test="${userDTO.startPage > 10 }">
+                <a
+                  href="/MovieProject/userselect.do?page=${userDTO.startPage - 10 }"
+                  >[PREV]</a
+                >
+              </c:if>
+            </div>
+            <div class="info-page__each">
+              <c:forEach
+                var="pageNum"
+                begin="${userDTO.startPage }"
+                end="${userDTO.endPage }"
+              >
+                <a href="/MovieProject/userselect.do?page=${pageNum }"
+                  >[${pageNum }]</a
+                >
+              </c:forEach>
+            </div>
+            <div class="info-page__each">
+              <c:if test="${userDTO.endPage < userDTO.totalPages }">
+                <a
+                  href="/MovieProject/userselect.do?page=${userDTO.startPage + 10 }"
+                  >[NEXT]</a
+                >
+              </c:if>
+            </div>
+          </c:if>
+        </div>
+      </form>
+    </div>
   </body>
 </html>
