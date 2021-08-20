@@ -4,6 +4,7 @@
 @import "/css/screen/main.css";
 @import "/css/screen/userjoin.css";
 @import "/css/screen/userdetail.css";
+@import "/css/screen/userinfo.css";
 
 /* component */
 @import "/css/screen/components/main-bar.css";
