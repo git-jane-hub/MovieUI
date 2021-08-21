@@ -8,6 +8,7 @@
 
 /* component */
 @import "/css/screen/components/main-bar.css";
+@import "/css/screen/components/main-body.css";
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
