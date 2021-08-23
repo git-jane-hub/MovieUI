@@ -21,9 +21,31 @@
         </span>
       </div>
       <div class="main-bar__column">
-        <span><a class="main-bar__btn" href="#">로그인</a></span>
+        <span><a class="main-bar__btn">님 환영합니다!</a></span>
         <span>|</span>
-        <span><a class="main-bar__btn" href="#">회원가입</a></span>
+        <c:if test="${session_admin == 1 }">
+          <span
+            ><a class="main-bar__btn" href="/MovieProject/userselect.do"
+              >관리자페이지</a
+            ></span
+          >
+        </c:if>
+        <c:if test="${session_admin == 0 }">
+          <form
+            class="main-bar__btn"
+            action="/MovieProject/userdetail.do"
+            method="post"
+          >
+            <input type="hidden" name="uId" value="${session_id }" />
+            <input type="submit" value="마이페이지" />
+          </form>
+        </c:if>
+        <span>|</span>
+        <span
+          ><a class="main-bar__btn" href="/MovieProject/userlogout.do"
+            >로그아웃</a
+          ></span
+        >
       </div>
     </div>
     <!-- main 화면 header end-->
