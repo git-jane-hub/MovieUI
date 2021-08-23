@@ -3,6 +3,8 @@
 /* screen */
 @import "/css/screen/main.css";
 @import "/css/screen/userjoin.css";
+@import "/css/screen/userlogin.css";
+@import "/css/screen/userupdate.css";
 @import "/css/screen/userdetail.css";
 @import "/css/screen/userinfo.css";
 
