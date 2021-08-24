@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>회원가입</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <!--main 화면 header start-->
+    <div class="main-bar">
+      <div class="main-bar__column">
+        <span
+          ><a href="#"><img src="/css/screen/images/logo.png" /></a
+        ></span>
+      </div>
+      <div class="main-bar__column">
+        <span>
+          <a class="main-bar__movie" href="#">영화정보</a>
+          <a class="main-bar__movie" href="#">영화예매</a>
+        </span>
+      </div>
+      <div class="main-bar__column">
+        <span><a class="main-bar__btn" href="#">로그인</a></span>
+        <span>|</span>
+        <span><a class="main-bar__btn" href="#">회원가입</a></span>
+      </div>
+    </div>
+    <!-- main 화면 header end-->
+    <!-- main 화면 body start-->
+    <div class="main-body">
+      <div class="main-sidebar"></div>
+      <div class="main-contents">
+        <div class="movie-info">
+          <div class="movie__detail">
+            <div class="movie__title">${movie.mtitle }</div>
+
+            <div class="movie__detail-each">
+              개요${movie.mgenre } | ${movie.mcountry } | ${movie.mtime } |
+              ${movie.mpremiere }
+            </div>
+            <div class="movie__detail-each">감독${movie.mdirector }</div>
+            <div class="movie__detail-each">출연${movie.mactor }</div>
+            <div class="movie__detail-each">등급${movie.mgrade }</div>
+          </div>
+
+          <div class="movie__detail">
+            <div class="movie__detail-img">
+              <img
+                src="/css/screen/images/movieimage.jpg"
+                width="240px"
+                height="339px"
+              />
+            </div>
+          </div>
+          <div class="movie__detail">
+            <div class="movie__plot">줄거리 ${movie.mplot }</div>
+          </div>
+        </div>
+
+        <div class="movie-info">
+          <h1>리뷰 목록</h1>
+          <form action="/MovieProject/moviereviewdetail.do" method="post">
+            <input type="hidden" name="mId" value="${movie.mid }" />
+            <input type="submit" value="리뷰 더보기" class="btn btn-dark" />
+          </form>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>리뷰번호</th>
+                <th>회원아이디</th>
+                <th>영화 제목</th>
+                <th>평점</th>
+                <th>리뷰내용</th>
+                <th>작성일</th>
+              </tr>
+            </thead>
+            <tbody>
+              <c:forEach var="review" items="${reviewList}">
+                <tr>
+                  <td>${review.rNum}</td>
+                  <td>${review.uId}</td>
+                  <td>${review.mTitle}</td>
+                  <td>${review.rRate}</td>
+                  <td>${review.rContent}</td>
+                  <td>${review.rDate}</td>
+                </tr>
+              </c:forEach>
+            </tbody>
+          </table>
+          <form action="/MovieProject/movieselect.do" method="post">
+            <input type="hidden" name="movielist" />
+            <input type="submit" value="영화 리스트로" class="btn btn-dark" />
+          </form>
+
+          <form
+            action="/MovieProject/movieupdate.do?mId=${movie.mid }"
+            method="post"
+          >
+            <input type="hidden" name="movieupdate" />
+            <input type="submit" value="영화 수정" class="btn btn-dark" />
+          </form>
+        </div>
+      </div>
+      <div class="main-sidebar"></div>
+    </div>
+    <!-- main 화면 body end-->
+    <!-- foot start -->
+    <div class="footer">
+      <div class="footer-info">
+        <div>CREATORS&nbsp;&nbsp;김지우 , 최재인 , 이한빈 , 김영훈</div>
+        <div>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</div>
+        <div>
+          CONTACT&nbsp;&nbsp;<a href="https://github.com/GITJIWOO"
+            >https://github.com/GITJIWOO</a
+          >
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div>Copyright © MOVING All right reserved.</div>
+      </div>
+    </div>
+    <!-- foot end -->
+  </body>
+</html>

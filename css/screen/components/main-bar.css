@@ -7,6 +7,7 @@
   box-sizing: border-box;
   padding: 15px;
   background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1000;
 }
 .main-bar__column {
   color: white;
@@ -41,20 +42,20 @@
 }
 
 .main-bar__btn {
-  display: flex;
-  vertical-align: text-top;
   font-size: medium;
   font-weight: 600;
   border-style: none;
   background-color: rgba(0, 0, 0, 0);
   margin: 0 15px;
 }
+
 .main-bar__btn input {
   background-color: rgba(0, 0, 0, 0);
   border: none;
   color: white;
   font-size: medium;
   font-weight: 600;
-  margin: -2 15px;
+  margin: -3px 15px;
   font-family: inherit;
+  cursor: pointer;
 }
