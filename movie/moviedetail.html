@@ -2,7 +2,7 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <title>회원가입</title>
+    <title>영화상세정보</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -37,34 +37,54 @@
       <div class="main-sidebar"></div>
       <div class="main-contents">
         <div class="movie-info">
-          <div class="movie__detail">
-            <div class="movie__title">${movie.mtitle }</div>
-
-            <div class="movie__detail-each">
-              개요${movie.mgenre } | ${movie.mcountry } | ${movie.mtime } |
-              ${movie.mpremiere }
+          <div class="movie-info__upper">
+            <div class="movie__detail">
+              <div class="movie__title">${movie.mtitle }</div>
+              <div class="movie__detail-each">
+                <span class="movie__detail-head">개요&nbsp;</span>|
+                ${movie.mgenre } | ${movie.mcountry } | ${movie.mtime } |
+                ${movie.mpremiere }
+              </div>
+              <div class="movie__detail-each">
+                <span class="movie__detail-head">감독&nbsp;</span>|
+                ${movie.mdirector }
+              </div>
+              <div class="movie__detail-each">
+                <span class="movie__detail-head">출연&nbsp;</span>|
+                ${movie.mactor }
+              </div>
+              <div class="movie__detail-each">
+                <span class="movie__detail-head">등급&nbsp;</span>|
+                ${movie.mgrade }
+              </div>
             </div>
-            <div class="movie__detail-each">감독${movie.mdirector }</div>
-            <div class="movie__detail-each">출연${movie.mactor }</div>
-            <div class="movie__detail-each">등급${movie.mgrade }</div>
-          </div>
-
-          <div class="movie__detail">
-            <div class="movie__detail-img">
-              <img
-                src="/css/screen/images/movieimage.jpg"
-                width="240px"
-                height="339px"
-              />
+            <div class="movie__detail">
+              <div class="movie__detail-img">
+                <img
+                  src="/css/screen/images/movieimage.jpg"
+                  width="240px"
+                  height="339px"
+                />
+              </div>
             </div>
           </div>
-          <div class="movie__detail">
-            <div class="movie__plot">줄거리 ${movie.mplot }</div>
+          <div class="movie-info__upper">
+            <div class="movie__detail">
+              <div class="movie__plot-head">줄거리</div>
+              <div class="movie__plot-contents">
+                ${movie.mplot }${movie.mplot }${movie.mplot }${movie.mplot
+                }${movie.mplot }${movie.mplot }${movie.mplot }${movie.mplot
+                }${movie.mplot }${movie.mplot }${movie.mplot }${movie.mplot
+                }${movie.mplot }${movie.mplot }${movie.mplot }${movie.mplot
+                }${movie.mplot }${movie.mplot }${movie.mplot }${movie.mplot
+                }${movie.mplot }${movie.mplot }${movie.mplot }${movie.mplot
+                }${movie.mplot }${movie.mplot }${movie.mplot }${movie.mplot }
+              </div>
+            </div>
           </div>
         </div>
-
         <div class="movie-info">
-          <h1>리뷰 목록</h1>
+          <h1 class="movie-info__review">리뷰 목록</h1>
           <form action="/MovieProject/moviereviewdetail.do" method="post">
             <input type="hidden" name="mId" value="${movie.mid }" />
             <input type="submit" value="리뷰 더보기" class="btn btn-dark" />
@@ -93,12 +113,16 @@
               </c:forEach>
             </tbody>
           </table>
-          <form action="/MovieProject/movieselect.do" method="post">
+          <form
+            class="movie-review__btn"
+            action="/MovieProject/movieselect.do"
+            method="post"
+          >
             <input type="hidden" name="movielist" />
             <input type="submit" value="영화 리스트로" class="btn btn-dark" />
           </form>
-
           <form
+            class="movie-review__btn"
             action="/MovieProject/movieupdate.do?mId=${movie.mid }"
             method="post"
           >
