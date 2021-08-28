@@ -1,0 +1,66 @@
+.main-body {
+  height: 700px;
+}
+
+.main-contents {
+  background-color: #2b2b2b;
+}
+.main-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.main-image {
+  transition: all 0.5s;
+}
+.img-btn {
+  position: absolute;
+  z-index: 100;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 45px;
+  font-weight: 100;
+}
+.img-btn:first-child {
+  left: 2%;
+}
+.img-btn:last-child {
+  right: 2%;
+}
+.img-btn:hover {
+  color: rgba(255, 255, 255, 1);
+}
+.move-moviedetail {
+  position: absolute;
+  z-index: 100;
+  background-color: transparent;
+  color: white;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 4px;
+  cursor: pointer;
+  width: 95px;
+  height: 35px;
+  bottom: 5%;
+  left: 47%;
+}
+.move-moviedetail:hover {
+  border: 1px solid rgba(255, 255, 255, 1);
+  font-weight: 600;
+}
+.main-poster__title {
+  color: white;
+  font-size: 25px;
+  font-weight: 500;
+  margin-top: 10px;
+  padding: 20px 0;
+}
+.main-poster__img {
+  display: flex;
+}
+.main-poster__each {
+}
+.main-poster__img img {
+  border-radius: 3px;
+  width: 95%;
+}

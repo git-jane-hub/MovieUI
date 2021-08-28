@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <title>영화상세정보</title>
+    <script
+      src="https://kit.fontawesome.com/62b1f47417.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      var num = 1;
+      // 다음 버튼
+      function nextPic() {
+        num++;
+        if (num > 3) {
+          num = 1;
+        }
+        document.getElementById("poster").src =
+          "/css/screen/images/poster" + num + ".jpg";
+        return false;
+      }
+      function prevPic() {
+        num--;
+        if (num < 1) {
+          num = 3;
+        }
+        document.getElementById("poster").src =
+          "/css/screen/images/poster" + num + ".jpg";
+        return false;
+      }
+      function movieDetail() {
+        document.getElementById("posterbtn").href =
+          "/main/main" + num + ".html";
+      }
+    </script>
+  </head>
+  <body>
+    <!--main 화면 header start-->
+    <div class="main-bar">
+      <div class="main-bar__column">
+        <span
+          ><a href="/main/main1.html"
+            ><img src="/css/screen/images/logo.png" /></a
+        ></span>
+      </div>
+      <div class="main-bar__column">
+        <span>
+          <a class="main-bar__movie" href="#">영화정보</a>
+          <a class="main-bar__movie" href="#">영화예매</a>
+        </span>
+      </div>
+      <div class="main-bar__column">
+        <span><a class="main-bar__btn" href="#">로그인</a></span>
+        <span>|</span>
+        <span><a class="main-bar__btn" href="#">회원가입</a></span>
+      </div>
+    </div>
+    <!-- main 화면 header end-->
+    <!-- main 화면 body start-->
+    <div class="main-body">
+      <div class="main-sidebar"></div>
+      <div class="main-contents">
+        <div class="main-image">
+          <a class="img-btn" href="#" onclick="return prevPic()">
+            <i class="fas fa-chevron-left i-btn"></i>
+          </a>
+          <img
+            width="100%"
+            height="700px"
+            src="/css/screen/images/poster1.jpg"
+            id="poster"
+          />
+          <a id="posterbtn" href="#">
+            <button class="move-moviedetail" onclick="return movieDetail()">
+              자세히 보기
+            </button>
+          </a>
+          <a class="img-btn" href="#" onclick="return nextPic()">
+            <i class="fas fa-chevron-right i-btn"></i>
+          </a>
+        </div>
+        <!--
+        <div class="main-poster">
+          <div class="main-poster__title">상영중인 영화</div>
+          <div class="main-poster__img">
+            <div class="main-poster__each">
+              <a id="posterimg" href="#"
+                ><img src="/css/screen/images/po1.jpeg"
+              /></a>
+            </div>
+            <div class="main-poster__each">
+              <a id="posterimg" href="#"
+                ><img
+                  src="/css/screen/images/po2.jpg"
+                  width="203px"
+                  height="288"
+              /></a>
+            </div>
+            <div class="main-poster__each">
+              <a id="posterimg" href="#"
+                ><img src="/css/screen/images/po3.jpg"
+              /></a>
+            </div>
+            <div class="main-poster__each">
+              <a id="posterimg" href="#"
+                ><img src="/css/screen/images/po1.jpeg"
+              /></a>
+            </div>
+          </div>
+        </div>-->
+      </div>
+      <div class="main-sidebar"></div>
+    </div>
+    <!-- main 화면 body end-->
+    <!-- foot start -->
+    <div class="footer">
+      <div class="footer-info">
+        <div>CREATORS&nbsp;&nbsp;김지우 , 최재인 , 이한빈 , 김영훈</div>
+        <div>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</div>
+        <div>
+          CONTACT&nbsp;&nbsp;<a href="https://github.com/GITJIWOO"
+            >https://github.com/GITJIWOO</a
+          >
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div>Copyright © MOVING All right reserved.</div>
+      </div>
+    </div>
+    <!-- foot end -->
+  </body>
+</html>
