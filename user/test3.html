@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style></style>
+    <script>
+      function onUser() {
+        document.getElementById("onUser").style.display = "block";
+        document.getElementById("onAdmin").style.display = "none";
+      }
+      function onAdmin() {
+        document.getElementById("onAdmin").style.display = "block";
+        document.getElementById("onUser").style.display = "none";
+      }
+    </script>
+    <meta charset="UTF-8" />
+    <title>메인 화면</title>
+  </head>
+  <body>
+    <button onclick="onUser()">user</button>
+    <button onclick="onAdmin()">admin</button>
+    <div id="onUser">user</div>
+    <div id="onAdmin" style="display: none">admin</div>
+  </body>
+</html>

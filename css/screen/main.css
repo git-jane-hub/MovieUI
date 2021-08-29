@@ -58,8 +58,6 @@
 .main-poster__img {
   display: flex;
 }
-.main-poster__each {
-}
 .main-poster__img img {
   border-radius: 3px;
   width: 95%;
